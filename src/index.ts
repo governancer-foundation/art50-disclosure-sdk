@@ -1,0 +1,58 @@
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: 2026 Agonist Development AB
+/**
+ * art50-disclosure-sdk — the transparency duties of Article 50 of Regulation
+ * (EU) 2024/1689 (the AI Act), as code.
+ *
+ * Three things, in the order a caller needs them:
+ *
+ *   1. resolveObligations(profile)  — which paragraphs bind you, and why
+ *   2. planDisclosures(profile)     — the notices to show, where, in which language
+ *   3. buildManifest(profile, …)    — a machine-readable record of both
+ *
+ * The Regulation is the authority; this package is a reading of it. Every
+ * verdict carries the paragraph and the reason behind it so the reading can be
+ * checked rather than trusted.
+ */
+
+export {
+  APPLICATION_DATE,
+  MARKING_GRACE_DATE,
+  resolveObligations,
+} from "./obligations.js";
+
+export {
+  chatPrefix,
+  firstInteractionNotice,
+  planDisclosures,
+  type DisclosureOptions,
+  type DisclosurePlan,
+  type Notice,
+  type Placement,
+} from "./disclosure.js";
+
+export {
+  DISCLOSURES,
+  LOCALES,
+  isLocale,
+  resolveLocale,
+  type DisclosureStrings,
+  type Locale,
+} from "./locales.js";
+
+export {
+  MANIFEST_SCHEMA,
+  buildManifest,
+  serialiseManifest,
+  type DisclosureManifest,
+  type ManifestOptions,
+} from "./manifest.js";
+
+export type {
+  Obligation,
+  ObligationReport,
+  Paragraph,
+  Role,
+  SyntheticModality,
+  SystemProfile,
+} from "./types.js";
