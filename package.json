@@ -1,7 +1,6 @@
 {
   "name": "@governancer-foundation/art50-disclosure-sdk",
   "version": "0.1.0",
-  "private": true,
   "license": "Apache-2.0",
   "author": "Alexander Brichkin (Agonist Development AB)",
   "description": "The transparency duties of Article 50 of the EU AI Act as code: work out which paragraphs bind a system and why, render the disclosure notices in six languages, and emit a machine-readable record of both.",
