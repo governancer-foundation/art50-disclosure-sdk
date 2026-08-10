@@ -27,9 +27,10 @@ released and documented; nothing is marked done because it is written.
   useful and not enough to serve the single market. Wording will be reviewed
   by a speaker per language rather than machine-translated, so this lands
   language by language rather than in one drop.
-- 📋 **Machine-readable disclosure output.** Emit the 50(2) companion as a
-  structured payload a downstream marking tool can consume, so the record and
-  the mark carry the same claim. The package still will not embed a watermark.
+- ✅ **Machine-readable disclosure output.** `buildMarkingClaim()` emits the
+  IPTC digital-source-type term and the provenance action a signing tool needs,
+  so the record and the mark carry the same claim. The package still does not
+  embed a watermark, and still says so where the duty arises.
 - 📋 **A conformance record shared with the accessibility axis.** The sister
   project on the accessibility side emits evidence in a common shape; adopting
   it here means one format describes compliance on two unrelated regulatory

@@ -51,6 +51,12 @@ export interface SystemProfile {
   /** Output modalities the system generates or manipulates. */
   generatesSyntheticContent?: SyntheticModality[];
   /**
+   * Whether the output is made from nothing or derived from captured content.
+   * The duty is the same either way; the machine-readable mark is not, because
+   * the provenance vocabulary distinguishes the two. Defaults to "generated".
+   */
+  syntheticOutputKind?: "generated" | "manipulated";
+  /**
    * The system performs an assistive function for standard editing, or does
    * not substantially alter the input data or its semantics.
    */

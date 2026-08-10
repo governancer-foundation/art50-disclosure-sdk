@@ -15,7 +15,8 @@ and one of them is narrower than it first reads.
 
 This package takes a description of what your system does and returns which
 paragraphs bind you, on what reasoning, what to display, where, in which
-language — and a machine-readable record of the whole assessment.
+language, what a provenance tool should embed — and a machine-readable record
+of the whole assessment.
 
 ## Quick start
 
@@ -42,7 +43,7 @@ plan.report.obligations.find((o) => o.paragraph === "50(2)");
 
 ## What it does
 
-Three functions, in the order you need them.
+Four functions, in the order you need them.
 
 **`resolveObligations(profile)`** — which of 50(1) to 50(4) bind this system,
 who bears each one (provider or deployer), and the reasoning behind every
@@ -54,6 +55,28 @@ defend later.
 where it belongs: before the first interaction, restated periodically, attached
 to the content, or embedded machine-readably. Wording ships in English, German,
 French, Spanish, Italian and Swedish.
+
+**`buildMarkingClaim(profile, options)`** — the two values a provenance
+manifest needs to satisfy 50(2): the IPTC digital-source-type term describing
+how the media came about, and the corresponding action. Both drop straight into
+a C2PA manifest. Returns nothing when the duty does not bind, because marking
+output you have no duty to mark asserts something about your own system that
+may not be true.
+
+```ts
+buildMarkingClaim({ generatesSyntheticContent: ["image"] });
+// { digitalSourceType:
+//     "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+//   action: "c2pa.created",
+//   modalities: ["image"], applicableFrom: "2026-08-02", … }
+```
+
+The Regulation names no standard — it is technology-neutral — but
+interoperability is one of the four adjectives it uses, so the package speaks
+the published vocabulary rather than a private one. It does not apply the mark:
+embedding and signing is a cryptographic and media-format problem, and a
+package that pretended to discharge the duty by returning an object would be
+worse than one that declines to.
 
 **`buildManifest(profile, options)`** — the assessment as data: the profile it
 rests on, every verdict with its reasoning, the notices undertaken, and the date
@@ -111,6 +134,7 @@ import {
   planDisclosures,
   firstInteractionNotice,
   chatPrefix,
+  buildMarkingClaim,
   buildManifest,
   serialiseManifest,
 } from "@governancer-foundation/art50-disclosure-sdk";

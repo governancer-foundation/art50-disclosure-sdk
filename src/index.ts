@@ -6,9 +6,10 @@
  *
  * Three things, in the order a caller needs them:
  *
- *   1. resolveObligations(profile)  — which paragraphs bind you, and why
- *   2. planDisclosures(profile)     — the notices to show, where, in which language
- *   3. buildManifest(profile, …)    — a machine-readable record of both
+ *   1. resolveObligations(profile)   — which paragraphs bind you, and why
+ *   2. planDisclosures(profile)      — the notices to show, where, in which language
+ *   3. buildMarkingClaim(profile, …) — the provenance values 50(2) marking needs
+ *   4. buildManifest(profile, …)     — a machine-readable record of the assessment
  *
  * The Regulation is the authority; this package is a reading of it. Every
  * verdict carries the paragraph and the reason behind it so the reading can be
@@ -39,6 +40,15 @@ export {
   type DisclosureStrings,
   type Locale,
 } from "./locales.js";
+
+export {
+  DIGITAL_SOURCE_TYPE,
+  MARKING_CLAIM_SCHEMA,
+  PROVENANCE_ACTION,
+  buildMarkingClaim,
+  type MarkingClaim,
+  type MarkingOptions,
+} from "./marking.js";
 
 export {
   MANIFEST_SCHEMA,

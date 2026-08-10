@@ -84,7 +84,7 @@ export function planDisclosures(
       paragraph: "50(2)",
       placement: "machine-readable",
       text: "",
-      note: "The marking itself is a technical measure — a watermark, a signed provenance manifest or an equivalent — that this SDK does not apply. Embed one, then record it here.",
+      note: "The marking itself is a technical measure — a watermark, a signed provenance manifest or an equivalent — that this SDK does not apply. Call buildMarkingClaim() for the provenance values to embed, then apply them with a signing tool.",
     });
     notices.push({
       paragraph: "50(2)",
