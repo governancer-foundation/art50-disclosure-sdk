@@ -10,7 +10,7 @@ What this package intends to become, and what it deliberately will not.
 Dates are quarters, not promises. An item moves to **shipped** only when it is
 released and documented; nothing is marked done because it is written.
 
-## Now — v0.1 (shipped, Q3 2026)
+## Shipped
 
 - ✅ Obligation resolution for Article 50(1) to 50(4), with the reasoning
   attached to every verdict including the negative ones
@@ -20,17 +20,17 @@ released and documented; nothing is marked done because it is written.
 - ✅ Reproducible assessment record, caller-stamped so two runs over the same
   input differ only if the assessment differs
 - ✅ The exemption edges that a careless reading gets wrong, each held by a test
+- ✅ **Machine-readable marking values** (0.2.0) — `buildMarkingClaim()` emits
+  the IPTC digital-source-type term and the provenance action a signing tool
+  needs, so the record and the mark carry the same claim. The package still
+  does not embed a watermark, and still says so where the duty arises.
 
-## Next — v0.2 (Q4 2026)
+## Next (Q4 2026)
 
 - 📋 **The remaining official languages of the Union.** Six is enough to be
   useful and not enough to serve the single market. Wording will be reviewed
   by a speaker per language rather than machine-translated, so this lands
   language by language rather than in one drop.
-- ✅ **Machine-readable disclosure output.** `buildMarkingClaim()` emits the
-  IPTC digital-source-type term and the provenance action a signing tool needs,
-  so the record and the mark carry the same claim. The package still does not
-  embed a watermark, and still says so where the duty arises.
 - 📋 **A conformance record shared with the accessibility axis.** The sister
   project on the accessibility side emits evidence in a common shape; adopting
   it here means one format describes compliance on two unrelated regulatory
@@ -40,7 +40,7 @@ released and documented; nothing is marked done because it is written.
   a term this package reads broadly, the reasoning text changes and the change
   is recorded.
 
-## Later — v0.3 and beyond (2027)
+## Later (2027)
 
 - 📋 **Article 50(5) accessibility conformance.** The manner requirement points
   at accessibility law; checking a rendered notice against it needs a renderer,
@@ -72,4 +72,5 @@ request; it becomes a test either way.
 
 | Version | Date | What changed |
 |---|---|---|
+| 1.1 | 2026-08-10 | Machine-readable marking values shipped in 0.2.0; sections named by horizon rather than by version, since a version is cut when work is done and a horizon is not. |
 | 1.0 | 2026-08-10 | Initial roadmap, published with v0.1. |

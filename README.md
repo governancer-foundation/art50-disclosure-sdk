@@ -167,8 +167,8 @@ record.
 
 ## Status
 
-v0.1 — first release. The API surface above is what the package commits to;
-additions are expected, breaking changes are not, before v1.0. See
+v0.2 — the API surface above is what the package commits to; additions are
+expected, breaking changes are not, before v1.0. See
 [`ROADMAP.md`](./ROADMAP.md).
 
 ## License
