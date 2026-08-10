@@ -45,11 +45,15 @@
     "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.test.json",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@types/node": "^22.0.0",
     "@vitest/coverage-v8": "^3.2.7",
+    "husky": "^9.1.7",
     "typescript": "^5.6.0",
     "vitest": "^3.2.7"
   },
