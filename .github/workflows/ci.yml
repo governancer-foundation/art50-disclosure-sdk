@@ -73,6 +73,11 @@ jobs:
             console.log("smoke ok:", report.applicable.join(","), "|", plan.notices[0].text);
           '
 
+      - name: Example — the worked end-to-end walkthrough still runs
+        # The example is documentation that executes. Running it here means it
+        # cannot drift into describing an interface the package no longer has.
+        run: node examples/end-to-end.mjs
+
       - name: Anti-leak guard (oss-ip-guard --dir .)
         # Sweep the publishable tree for secret/internal/trailer
         # leaks before anything is publishable. The guard is hand-authored

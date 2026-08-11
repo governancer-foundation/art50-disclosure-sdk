@@ -170,6 +170,18 @@ const manifest = buildManifest(
 serialiseManifest(manifest); // indented JSON, trailing newline, ready to commit
 ```
 
+## A worked example
+
+[`examples/end-to-end.mjs`](./examples/end-to-end.mjs) takes one product
+description all the way through — obligations, notices, marking values, and a
+record validated by the package that owns its shape — and prints each step.
+It runs in continuous integration, so it cannot drift into describing an
+interface that no longer exists.
+
+```bash
+node examples/end-to-end.mjs
+```
+
 ## Tests
 
 ```bash
