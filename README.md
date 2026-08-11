@@ -43,7 +43,7 @@ plan.report.obligations.find((o) => o.paragraph === "50(2)");
 
 ## What it does
 
-Four functions, in the order you need them.
+Five functions, in the order you need them.
 
 **`resolveObligations(profile)`** — which of 50(1) to 50(4) bind this system,
 who bears each one (provider or deployer), and the reasoning behind every
@@ -77,6 +77,19 @@ the published vocabulary rather than a private one. It does not apply the mark:
 embedding and signing is a cryptographic and media-format problem, and a
 package that pretended to discharge the duty by returning an object would be
 worse than one that declines to.
+
+**`buildAttestation(profile, options)`** — the same assessment as an in-toto
+statement, so it can be signed, transported and verified by the tooling that
+already carries build provenance and component inventories. The record's shape
+belongs to a separate, axis-agnostic package, and this package's own suite
+checks every branch it can produce against that package's validator. That ecosystem
+answers what a thing is made of and who built it; nothing in it answers which
+regulatory requirements it meets, which is the gap this fills — as a predicate,
+not as a new envelope. The package emits the payload; signing is DSSE's job and
+is not done here.
+
+A duty that binds is recorded as open, never as met: identifying an obligation
+is not discharging it. Every record declares what the tool could not know.
 
 **`buildManifest(profile, options)`** — the assessment as data: the profile it
 rests on, every verdict with its reasoning, the notices undertaken, and the date
@@ -125,8 +138,11 @@ says so where the duty arises rather than pretending to discharge it.
 npm install @governancer-foundation/art50-disclosure-sdk
 ```
 
-Requires Node 20 or later. The package is ESM-only, ships types, and has no
-runtime dependencies.
+Requires Node 20 or later. The package is ESM-only and ships types. It has one
+runtime dependency, `@governancer-foundation/conformance-attestation`, which
+owns the shape of the attestation record — depending on it rather than copying
+the types is what makes the claim that two axes share one format checkable
+instead of asserted.
 
 ```ts
 import {

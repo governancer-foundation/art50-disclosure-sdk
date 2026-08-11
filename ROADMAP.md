@@ -31,10 +31,13 @@ released and documented; nothing is marked done because it is written.
   useful and not enough to serve the single market. Wording will be reviewed
   by a speaker per language rather than machine-translated, so this lands
   language by language rather than in one drop.
-- 📋 **A conformance record shared with the accessibility axis.** The sister
-  project on the accessibility side emits evidence in a common shape; adopting
-  it here means one format describes compliance on two unrelated regulatory
-  axes, which is the point of having a format at all.
+- 🚧 **A conformance record shared with the accessibility axis.** The shape is
+  an in-toto statement carrying a conformance predicate, so it rides the
+  signing and verification path the supply-chain ecosystem already has.
+  `buildAttestation()` implements the AI Act profile of it. The schema itself
+  should move to a package of its own before a second axis implements it
+  independently, and its predicate type needs a stable, product-neutral URI —
+  until then the one emitted here is explicitly provisional.
 - 📋 **Guidance deltas.** The Commission's guidelines on Article 50 and the
   code of practice on marking and labelling are still moving. Where they narrow
   a term this package reads broadly, the reasoning text changes and the change

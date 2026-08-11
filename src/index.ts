@@ -10,6 +10,7 @@
  *   2. planDisclosures(profile)      — the notices to show, where, in which language
  *   3. buildMarkingClaim(profile, …) — the provenance values 50(2) marking needs
  *   4. buildManifest(profile, …)     — a machine-readable record of the assessment
+ *   5. buildAttestation(profile, …)  — the same, as a signable in-toto statement
  *
  * The Regulation is the authority; this package is a reading of it. Every
  * verdict carries the paragraph and the reason behind it so the reading can be
@@ -40,6 +41,18 @@ export {
   type DisclosureStrings,
   type Locale,
 } from "./locales.js";
+
+export {
+  CONFORMANCE_PREDICATE_TYPE,
+  PROFILE_ID,
+  STATEMENT_TYPE,
+  buildAttestation,
+  type AssessmentEntry,
+  type AttestationOptions,
+  type AttestationSubject,
+  type ConformanceAttestation,
+  type Outcome,
+} from "./attestation.js";
 
 export {
   DIGITAL_SOURCE_TYPE,
