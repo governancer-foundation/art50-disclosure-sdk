@@ -61,6 +61,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@governancer-foundation/conformance-attestation": "^0.1.0"
+    "@governancer-foundation/conformance-attestation": "^0.2.0"
   }
 }

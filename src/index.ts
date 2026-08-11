@@ -45,6 +45,14 @@ export {
 export { PROFILE } from "./profile.js";
 
 export {
+  INSTRUMENT,
+  describeRequirement,
+  locateRequirement,
+  resolvableRequirements,
+  type ResolveOptions,
+} from "./resolve.js";
+
+export {
   CONFORMANCE_PREDICATE_TYPE,
   PROFILE_ID,
   STATEMENT_TYPE,
