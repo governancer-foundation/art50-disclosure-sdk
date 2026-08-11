@@ -9,9 +9,26 @@ Notable changes to `@governancer-foundation/art50-disclosure-sdk`, newest first.
 [Semantic Versioning](https://semver.org/); before 1.0 a minor version may add,
 and does not break.
 
-## Unreleased
+## 0.3.0 — 2026-08-12
 
 ### Added
+
+- `locateRequirement()` — every requirement identifier this profile emits now
+  resolves to the publisher's own document identifier and a link anchored at
+  the article. A record names requirements by identifier and never by restated
+  text so it cannot drift from the law; until the identifier resolved, that was
+  a private code with a legal flavour.
+
+  It resolves to the act **including its amendments** rather than the original
+  publication, because a record about a duty in force has to be read against
+  the text in force. It declines rather than guesses: an identifier from
+  another instrument, or a provision this profile says nothing about, resolves
+  to nothing.
+
+- Properties across the whole profile space — a dozen independent flags is
+  several hundred combinations, and the example suite covers the interesting
+  handful. The strongest: no profile exists that produces a record the schema
+  package rejects.
 
 - The profile declaration, exported as data: the techniques it permits and what
   it means by each outcome value. Two values are reserved and one is unused —
