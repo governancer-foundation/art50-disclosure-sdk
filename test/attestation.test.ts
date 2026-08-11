@@ -223,3 +223,37 @@ describe("the record satisfies the shared schema, checked by its own validator",
     }
   });
 });
+
+describe("the profile declaration", () => {
+  it("names the axis the attestation reports", async () => {
+    const { PROFILE } = await import("../src/profile.js");
+    const a = buildAttestation({}, OPTIONS);
+    expect(a.predicate.profile).toEqual({ id: PROFILE.id, version: PROFILE.version });
+  });
+
+  it("permits exactly the technique the attestation uses", async () => {
+    // A record claiming a technique its own profile does not declare would be
+    // unverifiable by anyone downstream.
+    const { PROFILE } = await import("../src/profile.js");
+    for (const t of buildAttestation({}, OPTIONS).predicate.method.techniques) {
+      expect(PROFILE.techniques).toContain(t);
+    }
+  });
+
+  it("explains every outcome value it can emit", async () => {
+    const { PROFILE } = await import("../src/profile.js");
+    const emitted = new Set(
+      [
+        buildAttestation({ interactsWithPersons: true }, OPTIONS),
+        buildAttestation({}, OPTIONS),
+      ].flatMap((a) => a.predicate.assessment.map((e) => e.outcome)),
+    );
+    for (const o of emitted) expect(PROFILE.outcomeMapping[o]).toBeTruthy();
+  });
+
+  it("explains the values it deliberately does not emit, and why", async () => {
+    const { PROFILE } = await import("../src/profile.js");
+    expect(PROFILE.outcomeMapping.partiallySupports).toMatch(/not used/i);
+    expect(PROFILE.outcomeMapping.supports).toMatch(/reserved/i);
+  });
+});

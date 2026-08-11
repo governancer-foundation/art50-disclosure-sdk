@@ -42,6 +42,8 @@ export {
   type Locale,
 } from "./locales.js";
 
+export { PROFILE } from "./profile.js";
+
 export {
   CONFORMANCE_PREDICATE_TYPE,
   PROFILE_ID,
