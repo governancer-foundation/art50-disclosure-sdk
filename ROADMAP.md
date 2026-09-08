@@ -24,6 +24,12 @@ released and documented; nothing is marked done because it is written.
   the IPTC digital-source-type term and the provenance action a signing tool
   needs, so the record and the mark carry the same claim. The package still
   does not embed a watermark, and still says so where the duty arises.
+- ✅ **The record shape moved out of this package.** It is an in-toto statement
+  carrying a conformance predicate, so it rides the signing and verification
+  path the supply-chain ecosystem already has — and it is now a dependency
+  rather than something restated here. `buildAttestation()` implements the AI
+  Act profile of a schema this package no longer owns, which is the point: a
+  format defined by the axis that needed it first is not a shared format.
 
 ## Next (Q4 2026)
 
@@ -31,13 +37,11 @@ released and documented; nothing is marked done because it is written.
   useful and not enough to serve the single market. Wording will be reviewed
   by a speaker per language rather than machine-translated, so this lands
   language by language rather than in one drop.
-- 🚧 **A conformance record shared with the accessibility axis.** The shape is
-  an in-toto statement carrying a conformance predicate, so it rides the
-  signing and verification path the supply-chain ecosystem already has.
-  `buildAttestation()` implements the AI Act profile of it. The schema itself
-  should move to a package of its own before a second axis implements it
-  independently, and its predicate type needs a stable, product-neutral URI —
-  until then the one emitted here is explicitly provisional.
+- 🚧 **A stable predicate type.** The record shape now lives in its own package
+  and is depended on rather than restated here (see shipped), but the URI it is
+  published under is still provisional. It becomes stable when the schema
+  settles it; this package follows that decision rather than making it, because
+  a predicate type chosen by one axis is not a neutral one.
 - 📋 **Guidance deltas.** The Commission's guidelines on Article 50 and the
   code of practice on marking and labelling are still moving. Where they narrow
   a term this package reads broadly, the reasoning text changes and the change
@@ -75,5 +79,6 @@ request; it becomes a test either way.
 
 | Version | Date | What changed |
 |---|---|---|
+| 1.2 | 2026-09-08 | The record shape shipped as its own package and is now depended on; what remains of that item is the predicate URI, which is a decision for the schema rather than for this package. |
 | 1.1 | 2026-08-10 | Machine-readable marking values shipped in 0.2.0; sections named by horizon rather than by version, since a version is cut when work is done and a horizon is not. |
 | 1.0 | 2026-08-10 | Initial roadmap, published with v0.1. |
